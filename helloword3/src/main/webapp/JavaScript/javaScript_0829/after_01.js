@@ -69,7 +69,7 @@ let ojb= {
         this.friends.push(friend)
      },
      friendList : function(){
-       for(let i =0; i<3; i++){
+       for(let i =0; i<ojb.friends.length; i++){
           console.log(ojb.friends[i].sname)
     
        }
