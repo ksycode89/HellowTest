@@ -33,11 +33,11 @@ let  frm = document.createElement('form');
    frm.appendChild(inputPw);
 
    let aa2 = document.createElement('br');
-   inputPw.after(aa2)
+//    inputPw.after(aa2)
 
    let but = document.createElement('button')
    but.innerText='login'
-   but.setAttribute()
+   
    frm.appendChild(but);
 
 

@@ -1,8 +1,11 @@
 
 const members = [
-    {mid : 'admin' ,mname: '관리자',mphone:'010-1234-5678'},
-    {mid : 'dark' ,mname: '김상영',mphone:'010-4362-7894'},
-    {mid : 'blue' ,mname: '김하늘',mphone:'010-1234-1577'}
+    {mid : '1' ,mname: '관리자',mphone:'010-1234-5678'},
+    {mid : '2' ,mname: '김상영',mphone:'010-4362-7894'},
+    {mid : '3' ,mname: '김하늘',mphone:'010-1234-1577'},
+    {mid : '4' ,mname: '김하늘',mphone:'010-1234-1577'},
+    {mid : '5' ,mname: '김하늘',mphone:'010-1234-1577'}
+
 
 ]
 //addMember
@@ -25,7 +28,12 @@ document.addEventListener('DOMContentLoaded', function(){
     
     
     addBtn.addEventListener('click', showMember ) 
+
+
+    let seldel = document.getElementById('seldel')
     
+    seldel.addEventListener('click', selectDel ) 
+ 
     
     })
     
@@ -158,24 +166,16 @@ function modiMember(){
         })
 
   
-
-   
-
-   
-
-
-
-
-
 }
 // =================================================================
  function makeTr(mValues=[]){
+    let bb = document.createElement('br')
     let tr = document.createElement('tr')
     let tdtd = document.createElement('td')
     tr.appendChild(tdtd)
     
     let check =  document.createElement('input')
-    console.log(check)
+    // console.log(check)
     check.setAttribute('type','checkbox')
     check.setAttribute('class','box2')
 
@@ -189,6 +189,7 @@ function modiMember(){
         // document.getElementById('allC').checked = 
         //                             [...checkPro].every(item =>item.checked)
 
+    
         let checkPro = document.getElementsByClassName('box2')
         for(let i=0;i<checkPro.length;i++){
             if(checkPro[i].checked==false){
@@ -240,6 +241,8 @@ function modiMember(){
     btn.appendChild(txt)
     td.appendChild(btn)
     tr.appendChild(td)
+     
+  
 
  
 
@@ -297,6 +300,33 @@ for(let i=0;i<box2.length;i++){
 
 }
 
+let selectDel = function(){
 
-let checkPro = document.querySelectorAll('tbody tr input[type="checkbox"]')
-document.getElementById('allC').checked = [...checkPro].every(item =>item)
+    let checkPro = document.getElementsByClassName('box2')
+       let a = [...checkPro]
+  
+    a.forEach(mem=>{
+        if(mem.checked==true){
+                   
+                  mem.parentElement.parentElement.remove();}
+    })
+
+
+    console.log(checkPro)
+    
+  
+    
+    // for(let i=0; i<checkPro.length;i++){
+    //     console.log('ㅁㅁㅁㅁㅁ'+checkPro[i])
+    //     if(checkPro[i].checked==true){
+    //         console.log('ㅇㅇㅇㅇ'+checkPro[i] .parentElement.parentElement)
+    //         checkPro[i] .parentElement.parentElement.remove();
+           
+            
+    //     }
+        
+    // } 
+
+
+
+}
