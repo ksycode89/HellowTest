@@ -9,11 +9,17 @@ let  frm = document.createElement('form');
     labelId.innerText = '사용자id';
     frm.appendChild(labelId);
 
+  
+
+
      let inputId = document.createElement('input');
      inputId.setAttribute('type','text');
      inputId.setAttribute('name','user_id');
      inputId.setAttribute('id','user_id');
     frm.appendChild(inputId);
+
+    let aa = document.createElement('br');
+    inputId.after(aa)
 
     let labelPw = document.createElement('label');
     labelPw.setAttribute('for','user_pw');
@@ -26,9 +32,15 @@ let  frm = document.createElement('form');
     inputPw.setAttribute('id','user_Pw');
    frm.appendChild(inputPw);
 
+   let aa2 = document.createElement('br');
+   inputPw.after(aa2)
+
    let but = document.createElement('button')
    but.innerText='login'
+   but.setAttribute()
    frm.appendChild(but);
+
+
 
     document.getElementById('show').appendChild(frm);
     console.log(frm);
